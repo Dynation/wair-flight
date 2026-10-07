@@ -1,0 +1,55 @@
+{
+  "name": "wair-flight",
+  "version": "0.1.0",
+  "description": "One does, everyone awaits. Tiny promise deduplication / singleflight.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    }
+  },
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.cts",
+    "index.d.mts"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "tsc -p test/tsconfig.json",
+    "prepublishOnly": "npm test && npm run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "keywords": [
+    "singleflight",
+    "deduplication",
+    "promise",
+    "inflight",
+    "async"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dynation/wair-flight.git"
+  },
+  "homepage": "https://github.com/Dynation/wair-flight#readme",
+  "bugs": {
+    "url": "https://github.com/Dynation/wair-flight/issues"
+  }
+}
